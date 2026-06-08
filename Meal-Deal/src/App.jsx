@@ -5,6 +5,7 @@ import PageHeader from './PageHeader'
 import HomePage from './HomePage'
 import MealDetails from './MealDetails'
 import SavedRecipes from './SavedRecipes'
+import { MealProvider } from './MealContext'
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,9 @@ function App() {
 
 
   return (
-    <RouterProvider router={router}/>
+    <MealProvider>
+        <RouterProvider router={router}/>
+    </MealProvider>
   )
 }
 

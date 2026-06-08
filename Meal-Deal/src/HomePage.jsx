@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './HomePageStyle.css'
 
 function HomePage() {
 
@@ -15,18 +16,21 @@ function HomePage() {
         }, []);
 
     return(
-        <div>
-            <h4>Need Some Inspiration?</h4>
-            <ul>
+        <div className='home-layout'>
+        <h3 className='inspiration'>Need Some Inspiration?</h3>
+        <h2>Random Meals to Inspire You</h2>
+        <div className='grid-box'>
                 {meal.map((m) =>
                     (
-                        <li key={m.idMeal}>
-                            <img src={m.strMealThumb} onClick={() => navigate(`/meal/${m.idMeal}`)} />
-                            <p>{m.strMeal}</p>
-                        </li>
+                        <div className='list-item' key={m.idMeal}>
+                            <img className='list-img' src={m.strMealThumb}/>
+                            <p className='list-name'>{m.strMeal}</p>
+                            <button className="view-btn" onClick={() => navigate(`/meal/${m.idMeal}`)}>View Recipe</button>
+                        </div>
                     )
                 )}
-            </ul>
+
+        </div>
         </div>
     )
 

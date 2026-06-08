@@ -1,0 +1,48 @@
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: sans-serif;
+}
+
+
+.meal-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+
+}
+
+
+.meal-name {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+.view-btn {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+
+
+.meal-txt {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #ffffff;
+    text-align: left;
+    white-space: pre-line;
+}
