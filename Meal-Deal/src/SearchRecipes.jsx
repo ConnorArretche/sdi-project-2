@@ -1,6 +1,5 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect,} from "react"
 import { useNavigate} from 'react-router-dom'
-import { MealContext } from "./MealContext";
 
 function SearchRecipes(){
 

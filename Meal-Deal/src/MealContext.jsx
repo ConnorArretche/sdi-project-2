@@ -9,12 +9,17 @@ export function MealProvider({children}){
         return saved ? JSON.parse(saved) : []
     })
 
+
+function deleteMeal(id){
+    setSavedMeals(savedMeals.filter(meal => meal.idMeal !== id))
+}
+
     useEffect(() => {
         localStorage.setItem('savedMeals', JSON.stringify(savedMeals))
     }, [savedMeals])
 
     return (
-        <MealContext.Provider value={{savedMeals, setSavedMeals}}>
+        <MealContext.Provider value={{savedMeals, setSavedMeals, deleteMeal}}>
             {children}
         </MealContext.Provider>
     )
