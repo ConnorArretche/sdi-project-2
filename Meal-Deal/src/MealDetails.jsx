@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { MealContext } from './MealContext';
 import './MealDetailsStyle.css'
 
 function MealDetails(){
     let {mealId} = useParams();
     const [selectMeal, setSelectMeal] = useState(null);
-    const {savedMeals, setSavedMeals} = useContext(MealContext)
+    const {setSavedMeals} = useContext(MealContext)
 
 
     useEffect(() => {
