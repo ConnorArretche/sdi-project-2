@@ -7,8 +7,6 @@ import SavedRecipes from './SavedRecipes'
 import { MealProvider } from './MealContext'
 import SearchRecipes from './SearchRecipes'
 
-//TODO
-//Search PAge, header styling, saved meals styling
 
 const router = createBrowserRouter([
   {
