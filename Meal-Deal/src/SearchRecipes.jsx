@@ -18,7 +18,7 @@ function SearchRecipes(){
     function handleSearch(){
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
         .then(response => response.json())
-        .then(json => setMeal(json.meals))
+        .then(json => setMeal(json.meals || []))
     }
 
 
@@ -29,13 +29,18 @@ function SearchRecipes(){
                 <button onClick={handleSearch}>Search</button>
             </div>
             <div className='grid-box'>
-                {meal.map((m) => (
-                    <div className='list-item' key={m.idMeal}>
-                        <img className='list-img' src={m.strMealThumb}/>
-                        <p className='list-name'>{m.strMeal}</p>
-                        <button className="view-btn" onClick={() => navigate(`/meal/${m.idMeal}`)}>View Recipe</button>
-                    </div>
-                ))}
+                {meal.length === 0 ? (
+                    <p>No Results Found...</p>
+                ) : (
+                    meal.map((m) => (
+                        <div className='list-item' key={m.idMeal}>
+                            <img className='list-img' src={m.strMealThumb}/>
+                            <p className='list-name'>{m.strMeal}</p>
+                            <button className="view-btn" onClick={() => navigate(`/meal/${m.idMeal}`)}>View Recipe</button>
+                        </div>
+                    ))
+                )
+            }
             </div>
         </div>
     )
