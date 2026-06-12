@@ -24,7 +24,11 @@ function MealDetails(){
         <div className='container'>
             <img className="meal-image" src={selectMeal.strMealThumb}/>
             <h1 className='meal-name'>{selectMeal.strMeal}</h1>
-            <button className="view-btn" onClick={() => setSavedMeals(prevItems => [...prevItems, selectMeal])}>Save Meal</button>
+            <button className="view-btn" onClick={() => {
+                setSavedMeals(prevItems => [...prevItems, selectMeal])
+                alert("Meal Added!")
+                }
+                }>Save Meal</button>
             <p className='meal-txt'>{selectMeal.strInstructions}</p>
         </div>
     )
